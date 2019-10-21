@@ -131,7 +131,7 @@ async function createVault(options) {
       util.hideSpinner();
       util.log(`Vault ${newVault.name} created successfully.`);
       util.log(`Vault is not active until participant '${options.activeParticipant.name} joins`);
-      util.log(`To join with bot, run: 'java -Djava.library.path=. -jar BotSigner.jar -u http://localhost/casp -p ${options.activeParticipant.id} -w 1234567890'`);
+      util.log(`To join with bot, run: 'java -Djava.library.path=. -jar BotSigner.jar -u ${options.caspMngUrl} -p ${options.activeParticipant.id} -w 1234567890'`);
 
       util.showSpinner('Waiting for participant to join vault')
 

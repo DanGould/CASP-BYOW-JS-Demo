@@ -53,7 +53,7 @@ async function selectParticipant(options) {
         util.hideSpinner();
         util.log(`Participant '${newP.name}' created. Participant needs activation`);
         util.log(`To activate with phone, use: Participant ID: '${newP.id}', Activation code: '${newP.activationCode}'`);
-        util.log(`To activate as BOT, run: 'java -Djava.library.path=. -jar BotSigner.jar -u http://localhost/casp -p ${newP.id} -w 1234567890 -c ${newP.activationCode}'`);
+        util.log(`To activate as BOT, run: 'java -Djava.library.path=. -jar BotSigner.jar -u ${options.caspMngUrl} -p ${newP.id} -w 1234567890 -c ${newP.activationCode}'`);
         util.showSpinner('Waiting for activation');
         try {
           while(!newP.isActive) {

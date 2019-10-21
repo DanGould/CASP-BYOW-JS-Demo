@@ -258,7 +258,7 @@ async function signTransaction(options) {
       .send(signRequest)).body.operationID;
     util.hideSpinner();
     util.log('Signature process started, signature must be approved by vault participant');
-    util.log(`To approve with bot, run: 'java -Djava.library.path=. -jar BotSigner.jar -u http://localhost/casp -p ${options.activeParticipant.id} -w 1234567890'`);
+    util.log(`To approve with bot, run: 'java -Djava.library.path=. -jar BotSigner.jar -u ${options.caspMngUrl} -p ${options.activeParticipant.id} -w 1234567890'`);
     util.showSpinner('Waiting for signature quorum approval');
     var signOp;
     do {
